@@ -1,0 +1,9 @@
+fastapi
+uvicorn
+pandas
+sentence-transformers
+faiss-cpu
+python-dotenv
+openai
+aiosqlite
+duckduckgo-search
