@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ShopAI | Premium AI Shopping Experience</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body>
+    <div class="app-container">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <div class="logo">
+                    <i class="fas fa-bolt"></i>
+                    <span>ShopAI</span>
+                </div>
+            </div>
+            <nav class="nav-menu">
+                <a href="#" class="nav-item active"><i class="fas fa-sparkles"></i> Assistant</a>
+                <a href="#" class="nav-item"><i class="fas fa-compass"></i> Discover</a>
+                <a href="#" class="nav-item"><i class="fas fa-clock-rotate-left"></i> History</a>
+                <a href="#" id="cart-nav" class="nav-item"><i class="fas fa-shopping-cart"></i> My Cart <span
+                        id="cart-count" class="badge">0</span></a>
+            </nav>
+            <div class="sidebar-footer">
+                <div class="status-indicator">
+                    <span class="pulse"></span>
+                    <span>AI Engine Online</span>
+                </div>
+            </div>
+        </aside>
+
+        <!-- Main Chat Area -->
+        <main class="chat-area">
+            <header class="chat-header">
+                <div class="header-info">
+                    <h1>Semantic Assistant</h1>
+                    <p>Powered by Advanced RAG Technology</p>
+                </div>
+                <div class="header-actions">
+                    <button id="clear-chat" title="Clear Chat"><i class="fas fa-trash-can"></i></button>
+                    <button id="settings-btn" title="Settings"><i class="fas fa-cog"></i></button>
+                </div>
+            </header>
+
+            <div id="chat-messages" class="chat-messages">
+                <!-- Welcome Message -->
+                <div class="message bot-message">
+                    <div class="message-content">
+                        Hello! I'm **ShopAI**, your premium shopping companion. 🎙️<br><br>
+                        I don't just search for keywords; I understand your **intent**. Try asking me for:
+                        <ul>
+                            <li>"A high-end setup for professional video editing"</li>
+                            <li>"Something minimalist for my home office"</li>
+                            <li>"A durable gift for a fitness enthusiast"</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="chat-input-container">
+                <form id="chat-form">
+                    <input type="text" id="user-input" autocomplete="off" placeholder="Message ShopAI..." required>
+                    <button type="submit" id="send-btn">
+                        <i class="fas fa-arrow-up"></i>
+                    </button>
+                </form>
+            </div>
+        </main>
+
+        <!-- Product Preview Panel -->
+        <section id="product-sidebar" class="product-sidebar">
+            <div class="panel-header">
+                <h2>Product Catalog</h2>
+            </div>
+            <div id="product-list" class="product-list">
+                <!-- Initially populated via API -->
+            </div>
+        </section>
+    </div>
+
+    <!-- Product Details Modal -->
+    <div id="product-modal" class="modal-overlay">
+        <div class="modal-content">
+            <button class="close-modal"><i class="fas fa-times"></i></button>
+            <div id="modal-body">
+                <!-- Populated dynamically -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Cart Modal -->
+    <div id="cart-modal" class="modal-overlay">
+        <div class="modal-content" style="max-width: 500px;">
+            <button class="close-modal"><i class="fas fa-times"></i></button>
+            <h2 style="margin-bottom: 24px;"><i class="fas fa-shopping-cart"></i> Your Cart</h2>
+            <div id="cart-items" style="margin-bottom: 24px;">
+                <!-- Items here -->
+            </div>
+            <div class="cart-footer" style="border-top: 1px solid var(--glass-border); padding-top: 24px;">
+                <div
+                    style="display: flex; justify-content: space-between; font-size: 20px; font-weight: 700; margin-bottom: 24px;">
+                    <span>Total</span>
+                    <span id="cart-total">$0.00</span>
+                </div>
+                <button id="checkout-btn"
+                    style="width: 100%; background: var(--primary); color: white; border: none; padding: 18px; border-radius: var(--radius-md); font-weight: 700; cursor: pointer; font-size: 16px;">Secure
+                    Checkout</button>
+                <button id="clear-cart-btn"
+                    style="width: 100%; background: transparent; color: var(--text-secondary); border: 1px solid var(--glass-border); padding: 12px; border-radius: var(--radius-md); margin-top: 12px; cursor: pointer;">Clear
+                    Cart</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+
+</html>
