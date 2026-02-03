@@ -15,6 +15,7 @@ class ConversationalAssistant:
         
         self.client = AsyncOpenAI(api_key=api_key)
         self.model = "gpt-4o-mini"
+        
         self.db_path = db_path
 
     async def init_db(self):

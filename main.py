@@ -94,15 +94,15 @@ async def get_session_history(session_id: str):
 
 @app.get("/")
 async def get_frontend():
-    return FileResponse("index.html")
+    return FileResponse("frontend/index.html")
 
 @app.get("/style.css")
 async def get_css():
-    return FileResponse("style.css")
+    return FileResponse("frontend/style.css")
 
 @app.get("/app.js")
 async def get_js():
-    return FileResponse("app.js")
+    return FileResponse("frontend/app.js")
 
 # In case images are needed from the root (like logo.png if it existed)
 # But we won't do a greedy mount for security reasons.
